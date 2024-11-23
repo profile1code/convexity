@@ -47,13 +47,13 @@ body, html {
 
 
 /*-----------------------LOGIN PAGE CSS----------------------------------*/
-.login_box {
+.login-box {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
 }
-.login_form {
+.login-form {
     background: white;
     padding: 2rem;
     width: 100%;
