@@ -15,7 +15,7 @@ DROP TABLE IF EXISTS TeamEvents;
 -- Passwords --
 
 CREATE TABLE Passwords (
-    PasswordID INT NOT NULL,
+    PasswordID INT NOT NULL AUTO_INCREMENT,
     Password VARCHAR(255) NOT NULL,
     PRIMARY KEY (PasswordID),
     UNIQUE INDEX PasswordID_UNIQUE (PasswordID) INVISIBLE
@@ -24,7 +24,7 @@ CREATE TABLE Passwords (
 -- Users --
 
 CREATE TABLE Users (
-    UserID INT NOT NULL,
+    UserID INT NOT NULL AUTO_INCREMENT,
     Username VARCHAR(255) NOT NULL,
     Email VARCHAR(45) NOT NULL,
     PasswordID INT NOT NULL,
@@ -40,7 +40,7 @@ CREATE TABLE Users (
 -- Teams --
 
 CREATE TABLE Teams (
-    TeamID INT NOT NULL,
+    TeamID INT NOT NULL AUTO_INCREMENT,
     TeamName VARCHAR(255) NOT NULL,
     TeamLeaderID INT NOT NULL,
     PRIMARY KEY (TeamID),
@@ -51,7 +51,7 @@ CREATE TABLE Teams (
 -- UserTeams --
 
 CREATE TABLE UserTeams (
-    UserTeamID INT NOT NULL,
+    UserTeamID INT NOT NULL AUTO_INCREMENT,
     UserID INT NOT NULL,
     TeamID INT NOT NULL,
     PRIMARY KEY (UserTeamID),
@@ -69,7 +69,7 @@ CREATE TABLE UserTeams (
 -- Events --
 
 CREATE TABLE Events (
-    EventID INT NOT NULL,
+    EventID INT NOT NULL AUTO_INCREMENT,
     EventName VARCHAR(255) NOT NULL,
     PRIMARY KEY (EventID)
 );
@@ -77,7 +77,7 @@ CREATE TABLE Events (
 -- Timeslots --
 
 CREATE TABLE Timeslots (
-    TimeslotID INT NOT NULL,
+    TimeslotID INT NOT NULL AUTO_INCREMENT,
     StartTime DATETIME NOT NULL,
     EndTime DATETIME NULL,
     PRIMARY KEY (TimeslotID),
@@ -87,7 +87,7 @@ CREATE TABLE Timeslots (
 -- EventTimeslots --
 
 CREATE TABLE EventTimeslots (
-    EventTimeslotID INT NOT NULL,
+    EventTimeslotID INT NOT NULL AUTO_INCREMENT,
     EventID INT NOT NULL,
     TimeslotID INT NOT NULL,
     PRIMARY KEY (EventTimeslotID),
@@ -105,7 +105,7 @@ CREATE TABLE EventTimeslots (
 -- TeamEvents --
 
 CREATE TABLE TeamEvents (
-    TeamEventID INT NOT NULL,
+    TeamEventID INT NOT NULL AUTO_INCREMENT,
     TeamID INT NOT NULL,
     EventID INT NOT NULL,
     PRIMARY KEY (TeamEventID),
