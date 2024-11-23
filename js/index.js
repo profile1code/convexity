@@ -1,6 +1,7 @@
 const express = require('express');   
 const app = express();
 const PORT = 80;
+const db = require('./db-connector');
 
 app.use(express.urlencoded({ extended: true })); // Parses URL-encoded form data
 app.use(express.json()); // Parses JSON bodies
