@@ -1,44 +1,44 @@
-/*
-Tanush Ojha
-Hw5 - CS290
-5|7|2024
-*/
 
 /*------------------------------GENERAL CSS---------------------------------------------*/
-body {
-    background-color: azure;
-    
-    margin: 10px;
-}
-
 body, html {
-    margin: 0;
-    padding: 0;
+    margin: 0; /* Remove any default margin */
+    padding: 0; /* Remove any default padding */
     font-family: Arial, sans-serif;
     height: 100%;
     zoom: 125%;
-    background-color: #e0cfff; /* Replace with the desired background color */
+    background-color: #c5a7ff;
 }
 
+body {
+    background-color: rgb(152, 180, 255);
+}
+
+p {
+    margin: 40px;
+}
 
 .topnav {
     background-color: #333;
     overflow: hidden;
+    width: 100%; /* Ensure the topnav spans the full width of the screen */
+    margin: 0; /* Remove any margin that could cause extra space */
+    padding: 0; /* Ensure no padding causes extra space */
 }
 
 /* Style the links inside the navigation bar */
 .topnav a {
     float: left;
     color: #f2f2f2;
-    /*text-align: center;*/
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
 }
+
 #login {
     float: right;
-    background-color:brown;
+    background-color: brown;
 }
+
 /* Change the color of links on hover */
 .topnav a:hover {
     background-color: #ddd;
