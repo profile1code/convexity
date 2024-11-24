@@ -75,3 +75,21 @@ h1 {
   margin: 0.5rem;
   color: var(--turquoise);
 }
+
+#all-team-search-bar {
+  padding: 1rem;
+  margin: 2rem;
+  border-radius: 5pt;
+  border: 2pt solid var(--blue-crayola);
+  outline-style: none;
+  &:focus {
+    border-color: var(--turquoise);
+  }
+}
+
+#all-teams-list {
+  padding: 2rem;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+}
