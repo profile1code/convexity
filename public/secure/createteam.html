@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>My Events</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+
+    <link rel='stylesheet' type='text/css' media='screen' href='createteam.css'>
+    <script defer src="header-footer.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="form-container">
+      <form id="make-team" action="/create/team" method="POST">
+        <h1>Create a Team</h1>
+        <input placeholder="Team name" type="text" id="teamName" name="teamName" required>
+        <button type="submit">Create Team</button>
+      </form>
+    </div>
+</body>
+</html>

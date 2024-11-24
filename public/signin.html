@@ -6,6 +6,7 @@
     <title>Convexity Login</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='login.css'>
     <link rel="icon" type="image/x-icon" href="assets/icon.png" />
     <script defer src="header-footer.js"></script>
 </head>
@@ -13,11 +14,11 @@
     <div class="login-box">
         <div class="login-form">
             <h2>Login</h2>
-            <form>
-                <input class="up" type="text" id="username" name="username" placeholder="Username/Email" required><br>
-                <input class="up" type="password" id="password" name="password" placeholder="Password" required><br>
-                <button class="submitbutton" type="submit">Log in</button><br>
-                <a href="signup.html" class="registerlink" style="font-size: 10px;">Register</a>
+            <form action='/submit-login' method="POST">
+                <input class="up" type="text" id="username" name="username" placeholder="Username/Email" required>
+                <input class="up" type="password" id="password" name="password" placeholder="Password" required>
+                <button class="submitbutton" type="submit">Log in</button>
+                <a href="signup.html" class="registerlink">Register</a>
             </form>
         </div>
     </div>
