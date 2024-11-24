@@ -13,15 +13,10 @@ filePaths = fs.readdirSync(folderPath).map(file => `${file}`);
 
 
 function isLoggedIn(req, res, next) {
-    console.log("RUNNING");
-    //console.log('Incoming request:', req.url);  // Log the request URL
-    //console.log('Session data:', req.session);
     if (req.session && req.session.user) {
-        console.log("LOGGED IN");
         next();
     }
     else {
-        console.log("NOT LOGGED IN")
         const matchingFile = filePaths.find(filePath => req.url === `/${path.basename(filePath)}`);
         //console.log(matchingFile);
         //console.log(req.url);

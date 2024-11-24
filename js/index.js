@@ -31,9 +31,11 @@ app.use(express.static('../js'));
 
 const signup = require('./signup.js');
 const login = require('./login.js');
+const teams = require('./teams.js');
 
 app.use('/', signup);
 app.use('/', login);
+app.use('/', teams);
 
 
 app.get('/', (req, res) => {
