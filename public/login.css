@@ -31,7 +31,6 @@ form {
   background: var(--snow);
 }
 
-
 .up {
   border: 2.5px solid var(--gunmetal);
   border-radius: 4px;
@@ -43,7 +42,16 @@ form {
 
 .registerlink {
   text-align: center;
-  font-size: 25px;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  margin-top: 0.1rem;
+  border-radius: 4px;
+  border: 2.5px solid var(--snow);
+  transition-duration: 0.2s;
+  &:hover {
+    border: 2.5px solid var(--gunmetal);
+  }
 }
 
 .submitbutton {
@@ -53,7 +61,7 @@ form {
   font-size: inherit;
   border: solid;
   border-color: var(--gunmetal);
-  border-radius: 2px;
+  border-radius: 4px;
   cursor: pointer;
   padding: 0.5rem;
   margin: 0.5rem;
@@ -76,4 +84,3 @@ input:user-valid {
   transition-duration: 0.2s;
   border-color: green;
 }
-
