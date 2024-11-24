@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const topNav = `
         <div class="topnav">
             <a class="active" href="index.html" id="home">Home</a>
-            <a href="about.html" id="about">About</a>
-            <a href="#" id="login" onclick="toggleMenu()">Login</a>
+            <a href="">
+            <a href="signin.html" id="login">Login</a>
         </div>
     `;
 
