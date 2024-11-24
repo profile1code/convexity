@@ -31,7 +31,7 @@ router.post('/submit-login', (req, res, next) => {
                     username: user.Username,
                     userId: user.UserID
                 };
-                
+                res.cookie('loggedin', 'yes');
                 res.redirect('/index.html');
             });
         });
