@@ -1,0 +1,13 @@
+:root {
+    /* CSS HEX */
+    --blue-crayola: #5d7ae9ff;
+    --turquoise: #19e5d9ff;
+    --gunmetal: #213141ff;
+    --snow: #fffafbff;
+    --lavender-blush: #fceff9ff;
+  }
+
+.canvas {
+    flex-grow: 1;
+}
+
