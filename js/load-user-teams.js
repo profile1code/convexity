@@ -11,7 +11,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 teams.forEach(team => {
                     const teamElement = document.createElement('div');
                     teamElement.classList.add('team');
-                    teamElement.appendChild(document.createElement('h3')).textContent = `${team.TeamID} ${team.TeamName} ${team.Username}`;
+                    teamElement.appendChild(document.createElement('h3')).textContent = `${team.TeamID} ${team.TeamName}`;
+                    const teamcaptain = teamElement.appendChild(document.createElement('p'));
+                    teamcaptain.textContent = `${team.Username}`;
+                    teamcaptain.classList.add("captain");
                     teamContainer.appendChild(teamElement);
                 });
             }
