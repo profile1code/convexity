@@ -18,8 +18,6 @@ function isLoggedIn(req, res, next) {
     }
     else {
         const matchingFile = filePaths.find(filePath => req.url === `/${path.basename(filePath)}`);
-        //console.log(matchingFile);
-        //console.log(req.url);
         if (matchingFile) {
             res.redirect('./signin.html');
         }
