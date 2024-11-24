@@ -5,22 +5,22 @@
   --gunmetal: #213141ff;
   --snow: #fffafbff;
   --lavender-blush: #fceff9ff;
-  }
+}
 
-  .homesign {
-    color:var(--snow);
-    text-align: center;
-  }
-  
-  .canvas {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .main-icon {
-    width: 50rem;
-    align-self: center;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-  }
+.homesign {
+  color: var(--snow);
+  text-align: center;
+}
 
+.canvas {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.main-icon {
+  width: 15rem;
+  align-self: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
