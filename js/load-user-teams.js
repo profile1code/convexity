@@ -6,14 +6,12 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(teams => {
             const teamContainer = document.getElementById('user-teams-list');
             if (teams.length === 0) {
-                teamContainer.innerHTML = '<p>Not currently in a team.</p>';
+                teamContainer.appendChild(document.createElement("p")).textContent = "Not currently in a team.";
             } else {
                 teams.forEach(team => {
                     const teamElement = document.createElement('div');
                     teamElement.classList.add('team');
-                    teamElement.innerHTML = `
-                        <h3>${team.TeamID} ${team.TeamName} ${team.Username}</h3>
-                    `;
+                    teamElement.appendChild(document.createElement('h3')).textContent = `${team.TeamID} ${team.TeamName} ${team.Username}`;
                     teamContainer.appendChild(teamElement);
                 });
             }
