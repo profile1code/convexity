@@ -1,48 +1,47 @@
-/*-----------------------LOGIN PAGE CSS----------------------------------*/
-.login-box {
+h1 {
+  margin-left: 2rem;
+  font-size: 2rem;
+  color: var(--gunmetal);
+
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+/* Container for form */
+#form-container {
+  flex-grow: 1;
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-grow: 1;
+  flex-direction: column;
 }
-.login-form {
+form {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  max-width: fit-content;
   background: var(--snow);
   padding: 4rem;
   text-align: center;
   border-radius: 5px; /* Rounded corners */
   box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.4); /* Subtle shadow */
-}
-#signinbox {
-  font-size: 1rem;
-  margin-bottom: 1rem;
-  font-family: "Comic Sans MS", "Comic Sans", cursive;
-}
-.logo {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  font-family: "Lucida Console", "Courier New", monospace;
-}
 
-form {
-  display: flex;
-  flex-direction: column;
-  font-size: 1.5rem;
-  background: var(--snow);
+  & > label {
+    font-size: 3rem;
+  }
+  & > input {
+    border: 2.5px solid var(--gunmetal);
+    border-radius: 4px;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    font-size: 1.5rem;
+  }
 }
 
-
-.up {
-  border: 2.5px solid var(--gunmetal);
-  border-radius: 4px;
-  font-family: "Comic Sans MS", "Comic Sans", cursive;
-  padding: 0.5rem;
-  margin: 0.5rem;
-  font-size: 1.5rem;
-}
-
-
-.submitbutton, form > a {
+form > button {
   transition-duration: 0.2s;
   background: var(--gunmetal); /* Dark button color */
   color: var(--snow);

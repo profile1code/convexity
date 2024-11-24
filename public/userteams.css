@@ -1,0 +1,70 @@
+.team {
+  border: 2pt solid var(--blue-crayola);
+  padding: 0 0.5rem;
+  box-shadow: 3px 3px 10pt rgba(0,0,0, 0.3);
+
+  background: transparent;
+  backdrop-filter: brightness(90%);
+
+  border-color: rgb(93,122,233);
+  border-image: linear-gradient(148deg, rgba(93,122,233,0.8) 0%, rgba(25,229,217,0.8) 200%); 
+  border-image-slice: 1;
+
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+
+  & > h3 {
+    color: var(--snow);
+    font-weight: 800;
+    font-size: 1.5rem;
+    text-wrap: wrap;
+    margin: 0.5rem;
+  }
+}
+
+.team:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+h1 {
+  margin-left: 2rem;
+  font-size: 2rem;
+  color: var(--turquoise);
+
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+#teams-buttons {
+  margin-left: 2rem;
+  background: var(--gunmetal);
+  & > a {
+    color: var(--snow);
+    text-decoration: none;
+    font-weight: 600;
+    
+    display: inline-block;
+    padding: 0.5rem;
+    border: 2pt solid var(--blue-crayola);
+
+    &:hover {
+      color: var(--gunmetal);
+      background: var(--blue-crayola);
+      transition-duration: 0.3s;
+    }
+  }
+}
+#user-teams-list {
+  padding: 2rem;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+}
