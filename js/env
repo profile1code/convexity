@@ -1,0 +1,5 @@
+DB_HOST=convexity.ch0e4ucai1nj.us-east-2.rds.amazonaws.com
+DB_USER=admin
+DB_PASSWORD=Convexity1
+DB_NAME=ConvexityDB
+DB_CONNECTION_LIMIT=12

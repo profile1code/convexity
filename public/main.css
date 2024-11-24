@@ -41,6 +41,9 @@ p {
     color: black;
 }
 
+.hidden {
+    visibility: hidden;
+}
 
 /*-----------------------LOGIN PAGE CSS----------------------------------*/
 .login-box {

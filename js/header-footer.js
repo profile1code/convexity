@@ -4,11 +4,12 @@ document.addEventListener("DOMContentLoaded", function() {
     const topNav = `
         <div class="topnav">
             <a class="active" href="index.html" id="home">Home</a>
-            <a href="">
+            <a href="teams.html" class="hidden">Teams</a>
+            <a href="events.html" class="hidden">Events</a>
             <a href="signin.html" id="login">Login</a>
         </div>
     `;
-
+    
     // Create the footer
     const footer = `
         <footer>
