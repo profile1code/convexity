@@ -15,10 +15,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div id="teams-buttons">
+      <a href="user-teams.html">My Teams</a>
+      <a href="user-teamsearch.html">Join a Team</a>
+    </div>
     <div id="form-container">
       <form id="make-team" action="/create/team" method="POST">
         <h1>Create a Team</h1>
         <input placeholder="Team name" type="text" id="teamName" name="teamName" required>
+        <input placeholder="Description" type="text" id="description" name="description">
         <button type="submit">Create Team</button>
       </form>
     </div>
