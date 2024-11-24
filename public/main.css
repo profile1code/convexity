@@ -69,5 +69,6 @@ footer > p {
 
 /* Change the color of links on hover */
 .topnav a:hover {
+  transition-duration: 0.2s;
   color: var(--turquoise);
 }
