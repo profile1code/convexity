@@ -1,7 +1,12 @@
 // loads up the top bar and footer for each page without needing to modify it for all pages
 document.addEventListener("DOMContentLoaded", function() {
     // Create the top navigation bar
-
+{/* <form action="/logout" method="POST">
+                <button id="login" type="submit">Logout</button>
+            </form> 
+            
+    <a href="index.html" id="login" onclick="logoutUser();">Logout</a>
+*/}
 
     const loginTopNav = `
         <div class="topnav">
@@ -21,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
         <div class="topnav">
             <a class="active" href="index.html" id="home">Home</a>
             <a class="active" href="/user-teams.html" id="user-teams">My Teams</a>
-            <a href="index.html" id="login" onclick="logoutUser();">Logout</a>
+            <a href="" id="login" onclick="logoutUser();">Logout</a>
         </div>
     `;
     // Insert the top navigation bar into the body at the start
@@ -58,12 +63,10 @@ function includeMenuFunction() {
 }
 
 function logoutUser() {
-    const cookies = document.cookie.split(';');
-
-    for (let i = 0; i < cookies.length; i++) {
-        const cookie = cookies[i];
-        const eqPos = cookie.indexOf('=');
-        const name = eqPos > -1 ? cookie.substr(0, eqPos).trim() : cookie.trim();
-        document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;';
-    }
+    document.cookie =  'connect.sid=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;';
+    document.cookie = 'loggedin=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;';
+    fetch('/logout', {
+        method: "POST"
+    })
+    .then (response => {});
 }

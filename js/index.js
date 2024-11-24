@@ -4,6 +4,7 @@ const app = express();
 const path = require('path');
 const PORT = 80;
 const fs = require('fs');
+const router = express.Router();
 
 folderPath = '../public/secure'
 filePaths = fs.readdirSync(folderPath).map(file => `/${file}`);
@@ -37,6 +38,19 @@ app.use('/', teams);
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+
+
+app.post('/logout', (req, res) => {
+    req.session.destroy((err) => {
+        if (err) {
+            return res.status(500).send('Error during logout');
+         }
+        res.clearCookie('connect.sid');
+        
+        res.redirect('/signin.html');
+    });
 });
 
 // Start the server
