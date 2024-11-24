@@ -15,12 +15,15 @@ html {
   padding: 0; /* Remove any default padding */
   font-family: Arial, sans-serif;
   height: 100%;
-  zoom: 125%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* zoom: 125%; */
   background-color: var(--gunmetal);
 }
 
 p {
-  margin: 40px;
+  margin: 2rem;
   color: var(--snow);
 }
 
@@ -35,7 +38,6 @@ p {
 
 footer {
   background-color: var(--gunmetal);
-  overflow: hidden;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -73,7 +75,7 @@ footer > p {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  flex-grow: 1;
 }
 .login-form {
   background: var(--snow);
