@@ -15,9 +15,7 @@ html {
   padding: 0; /* Remove any default padding */
   font-family: Arial, sans-serif;
   height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
+  zoom: 125%;
   background-color: var(--gunmetal);
 }
 
