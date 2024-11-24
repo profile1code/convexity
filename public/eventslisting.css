@@ -1,0 +1,62 @@
+:root {
+  /* CSS HEX */
+  --blue-crayola: #5d7ae9ff;
+  --turquoise: #19e5d9ff;
+  --gunmetal: #213141ff;
+  --snow: #fffafbff;
+  --lavender-blush: #fceff9ff;
+}
+
+.canvas {
+  display: flex;
+  flex-grow: 1;
+}
+
+/* .filter {
+  width: 10rem;
+  height: 10rem;
+} */
+
+.events-list {
+  display: flex;
+  flex-shrink: 1;
+  flex-grow: 0;
+}
+
+.event-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border: 1px solid var(--blue-crayola);
+  margin: 1rem;
+  max-width: 15rem;
+  max-height: 10rem;
+}
+
+.event-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  width: 100%;
+}
+
+.event-title {
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  text-align: center;
+  color: var(--snow);
+  text-wrap: wrap;
+  /* max-height: 100rem; */
+
+}
+
+.time-and-team {
+  display: flex;
+  color: var(--snow);
+  justify-content: space-around;
+}
+
+.time-and-team div {
+  padding: 0.5rem 1rem;
+}
