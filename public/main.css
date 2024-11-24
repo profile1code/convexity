@@ -18,7 +18,6 @@ html {
   width: 100%;
   display: flex;
   flex-direction: column;
-  /* zoom: 125%; */
   background-color: var(--gunmetal);
 }
 
@@ -38,6 +37,8 @@ p {
 }
 
 footer {
+  padding: 1rem 2rem;
+  bottom: 0;
   background-color: var(--gunmetal);
   width: 100%;
   margin: 0;
@@ -49,7 +50,7 @@ footer > p {
   font-family: monospace;
   font-size: 1.5em;
   margin: 0;
-  padding: 2rem;
+  padding: 1rem 2rem;
 }
 
 /* Style the links inside the navigation bar */
