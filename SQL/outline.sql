@@ -43,6 +43,7 @@ CREATE TABLE Teams (
     TeamID INT NOT NULL AUTO_INCREMENT,
     TeamName VARCHAR(255) NOT NULL,
     TeamLeaderID INT NOT NULL,
+    Description TEXT,
     PRIMARY KEY (TeamID),
     UNIQUE INDEX TeamID_UNIQUE (TeamID),
     UNIQUE INDEX TeamName_UNIQUE (TeamName)

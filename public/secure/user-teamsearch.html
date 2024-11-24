@@ -8,19 +8,21 @@
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='userteams.css'>
     <script defer src="header-footer.js"></script>
-    <script defer src="load-user-teams.js"></script>
-    <link rel="icon" type="image/x-icon" href="assets/icon.png" />
+    <script defer src="load-all-teams.js"></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>My Teams</h1>
+    <h1>Team Search</h1>
     <div id="teams-buttons">
-      <a href="user-teamsearch.html">Join a Team</a>
+      <a href="user-teams.html">My Teams</a>
       <a href="createteam.html">Make a Team</a>
     </div>
-    <div id="user-teams-list">
+    <input type="text" id="all-team-search-bar" placeholder="Search teams..." oninput="renderTeams()">
+
+    <div id="all-teams-list">
         
     </div>
 </body>

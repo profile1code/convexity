@@ -1,5 +1,4 @@
 h1 {
-  margin-left: 2rem;
   font-size: 2rem;
   color: var(--gunmetal);
 
@@ -7,8 +6,7 @@ h1 {
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
+  font-variation-settings: "wdth" 100;
 }
 
 /* Container for form */
@@ -17,6 +15,26 @@ h1 {
   display: flex;
   justify-content: center;
   flex-direction: column;
+}
+
+#teams-buttons {
+  margin-left: 2rem;
+  background: var(--gunmetal);
+  & > a {
+    color: var(--snow);
+    text-decoration: none;
+    font-weight: 600;
+
+    display: inline-block;
+    padding: 0.5rem;
+    border: 2pt solid var(--blue-crayola);
+
+    &:hover {
+      color: var(--gunmetal);
+      background: var(--blue-crayola);
+      transition-duration: 0.3s;
+    }
+  }
 }
 form {
   display: flex;
