@@ -6,8 +6,24 @@
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="eventslisting.css" />
     <script defer src="header-footer.js"></script>
+    <script defer src="/events.js"></script>
   </head>
+
   <body>
+    <dialog id="add-event-dialog">
+      <form>
+        <legend>Add Event</legend>
+        <label for="start-time">Start Time</label>
+        <input type="date" id="start-time" required>
+        <label for="end-time">End Time</label>
+        <input type="date" id="end-time" required>
+        <label for="event-title">Event Title</label>
+        <input type="text" id="event-title" required>
+        <button type="submit" id="event-submit">Add Event</button>
+        <button id="event-cancel">Cancel</button>
+      </form>
+    </dialog>
+    <button id="add-button"></button>
     <div class="canvas">
       <!-- <aside class="filter-box">
         <div class="filter">

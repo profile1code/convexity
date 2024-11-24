@@ -60,3 +60,22 @@
 .time-and-team div {
   padding: 0.5rem 1rem;
 }
+
+#add-event-dialog {
+  align-self: center;
+  position: absolute;
+  padding: 5rem;
+  &::backdrop {
+    backdrop-filter: blur(1pt);
+  }
+}
+
+#add-button {
+  position: absolute;
+  bottom: 5rem;
+  right: 5rem;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 100%;
+  border-style: solid;
+}
