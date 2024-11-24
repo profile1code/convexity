@@ -21,6 +21,21 @@ p {
     padding: 0; /* Ensure no padding causes extra space */
 }
 
+footer {
+  background-color: #333;
+  overflow: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+footer > p {
+  font-family: monospace;
+  font-size: 1.5em;
+  margin: 0;
+  padding: 2em;
+}
+
 /* Style the links inside the navigation bar */
 .topnav a {
     float: left;
