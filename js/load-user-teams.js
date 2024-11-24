@@ -11,11 +11,13 @@ document.addEventListener("DOMContentLoaded", () => {
                     const teamElement = document.createElement('div');
                     teamElement.classList.add('team');
                     teamElement.appendChild(document.createElement('h3')).textContent = `${team.TeamID} ${team.TeamName}`;
-                    const description = team.Description ? team.Description: "No description available"
-                    teamElement.appendChild(document.createElement('h3')).textContent = `${team.TeamID} ${team.TeamName} ${team.Username} ${description}`;
                     const teamcaptain = teamElement.appendChild(document.createElement('p'));
-                    teamcaptain.textContent = `${team.Username}`;
+                    teamcaptain.textContent = `Team Leader: ${team.Username}`;
                     teamcaptain.classList.add("captain");
+                    teamContainer.appendChild(teamElement);
+                    const description = teamElement.appendChild(document.createElement('p'));
+                    description.textContent = team.Description ? team.Description: "No description available";
+                    description.classList.add("description");
                     teamContainer.appendChild(teamElement);
                     
                 });
