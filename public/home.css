@@ -7,7 +7,20 @@
   --lavender-blush: #fceff9ff;
   }
 
-.canvas {
-  flex-grow: 1;
-}
+  .homesign {
+    color:var(--snow);
+    text-align: center;
+  }
+  
+  .canvas {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .main-icon {
+    width: 50rem;
+    align-self: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
 
