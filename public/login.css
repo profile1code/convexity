@@ -41,8 +41,12 @@ form {
   font-size: 1.5rem;
 }
 
+.registerlink {
+  text-align: center;
+  font-size: 25px;
+}
 
-.submitbutton, form > a {
+.submitbutton {
   transition-duration: 0.2s;
   background: var(--gunmetal); /* Dark button color */
   color: var(--snow);
@@ -72,3 +76,4 @@ input:user-valid {
   transition-duration: 0.2s;
   border-color: green;
 }
+
