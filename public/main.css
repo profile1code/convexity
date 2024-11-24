@@ -27,26 +27,29 @@ p {
 }
 
 .topnav {
-    background-color: #333;
+    background-color: var(--gunmetal);
     overflow: hidden;
     width: 100%; /* Ensure the topnav spans the full width of the screen */
     margin: 0; /* Remove any margin that could cause extra space */
     padding: 0; /* Ensure no padding causes extra space */
+    border-bottom: solid 1pt var(--blue-crayola);
 }
 
+
 footer {
-  background-color: #333;
+  background-color: var(--gunmetal);
   overflow: hidden;
   width: 100%;
   margin: 0;
   padding: 0;
+  border-top: solid 1pt var(--blue-crayola);
 }
 
 footer > p {
   font-family: monospace;
   font-size: 1.5em;
   margin: 0;
-  padding: 2em;
+  padding: 2rem;
 }
 
 /* Style the links inside the navigation bar */
