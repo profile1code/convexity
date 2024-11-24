@@ -15,7 +15,11 @@ html {
   padding: 0; /* Remove any default padding */
   font-family: Arial, sans-serif;
   height: 100%;
+<<<<<<< HEAD
   zoom: 125%;
+=======
+  zoom: 1%;
+>>>>>>> 2704f6d (fmt)
   background-color: var(--gunmetal);
 }
 
