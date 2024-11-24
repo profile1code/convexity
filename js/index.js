@@ -6,11 +6,8 @@ const PORT = 80;
 const fs = require('fs');
 const router = express.Router();
 
-console.log(__dirname);
-
 folderPath = '../public/secure'
 filePaths = fs.readdirSync(folderPath).map(file => `/${file}`);
-console.log(filePaths);
 
 app.use(express.urlencoded({ extended: true })); // Parses URL-encoded form data
 app.use(express.json()); // Parses JSON bodies

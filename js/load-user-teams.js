@@ -1,6 +1,5 @@
 
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("DOM Loaded")
     fetch('/fetch/user-teams')
         .then(response => response.json())
         .then(teams => {
@@ -13,9 +12,14 @@ document.addEventListener("DOMContentLoaded", () => {
                     teamElement.classList.add('team');
                     teamElement.appendChild(document.createElement('h3')).textContent = `${team.TeamID} ${team.TeamName}`;
                     const teamcaptain = teamElement.appendChild(document.createElement('p'));
-                    teamcaptain.textContent = `${team.Username}`;
+                    teamcaptain.textContent = `Team Leader: ${team.Username}`;
                     teamcaptain.classList.add("captain");
                     teamContainer.appendChild(teamElement);
+                    const description = teamElement.appendChild(document.createElement('p'));
+                    description.textContent = team.Description ? team.Description: "No description available";
+                    description.classList.add("description");
+                    teamContainer.appendChild(teamElement);
+                    
                 });
             }
         })
@@ -24,4 +28,3 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById('user-teams-list').innerHTML = '<p>Failed to load teams.</p>';
         });
 });
-
