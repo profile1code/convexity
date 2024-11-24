@@ -1,15 +1,16 @@
 // loads up the top bar and footer for each page without needing to modify it for all pages
 document.addEventListener("DOMContentLoaded", function() {
     // Create the top navigation bar
+
+
     const topNav = `
         <div class="topnav">
             <a class="active" href="index.html" id="home">Home</a>
-            <a href="">
+            <a class="active" href="/test.html" id="test">Test</a>
             <a href="signin.html" id="login">Login</a>
         </div>
     `;
 
-    // Create the footer
     const footer = `
         <footer>
             <p>2024</p>
@@ -28,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function() {
     body.appendChild(divFooter);  // Adds the footer at the end of the body
 
 
-    includeMenuFunction();
+    //includeMenuFunction();
 });
 
 
@@ -38,11 +39,5 @@ function includeMenuFunction() {
     script.src = 'menu-function.js';
     script.defer = true;
     document.head.appendChild(script);
-
-    // Load the CSS file for dropdown styles
-    const css = document.createElement('link');
-    css.href = 'dropdown.css';  // Corrected to 'href'
-    css.rel = 'stylesheet';      // Added 'rel' attribute
-    document.head.appendChild(css);
 }
 

@@ -5,7 +5,7 @@ const db = require('./db-connector');
 const bcrypt = require('bcrypt');
 
 // Log in route
-router.post('/submit-login', (req, res) => {
+router.post('/submit-login', (req, res, next) => {
 
     const { username, password } = req.body;
     
@@ -22,7 +22,6 @@ router.post('/submit-login', (req, res) => {
             if (err || results.length === 0) {
                 return res.status(400).send('Could not get user password');
             }
-            console.log(passwordResults)
             bcrypt.compare(password, passwordResults[0].Password, (err, match) => {
                 if (err || !match) {
                     return res.status(400).send('Invalid username or password');
@@ -30,10 +29,10 @@ router.post('/submit-login', (req, res) => {
                 
                 req.session.user = {
                     username: user.Username,
-                    userId: user.UserID // Store only necessary info
+                    userId: user.UserID
                 };
                 
-                res.status(200).send('Logged in successfully');
+                res.redirect('/index.html');
             });
         });
     });
