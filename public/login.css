@@ -1,0 +1,63 @@
+/*-----------------------LOGIN PAGE CSS----------------------------------*/
+.login-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  flex-grow: 1;
+}
+.login-form {
+  background: var(--snow);
+  padding: 4rem;
+  text-align: center;
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.4); /* Subtle shadow */
+}
+#signinbox {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+.logo {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.up {
+  border: 2.5px solid var(--gunmetal);
+  border-radius: 4px;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  padding: 0.5rem;
+  margin: 0.5rem;
+}
+
+
+.submitbutton, form > a {
+  background: var(--gunmetal); /* Dark button color */
+  color: var(--snow);
+  font-size: 1rem;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  text-decoration: none;
+}
+
+input:user-invalid {
+  border-color: crimson;
+  outline-style: none;
+}
+
+input:user-valid {
+  border-color: green;
+  outline-style: none;
+}
