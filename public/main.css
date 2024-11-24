@@ -27,29 +27,26 @@ p {
 }
 
 .topnav {
-  background-color: var(--gunmetal);
-  overflow: hidden;
-  width: 100%; /* Ensure the topnav spans the full width of the screen */
-  margin: 0; /* Remove any margin that could cause extra space */
-  padding: 0; /* Ensure no padding causes extra space */
-  border-bottom: solid 1pt var(--blue-crayola);
+    background-color: #333;
+    overflow: hidden;
+    width: 100%; /* Ensure the topnav spans the full width of the screen */
+    margin: 0; /* Remove any margin that could cause extra space */
+    padding: 0; /* Ensure no padding causes extra space */
 }
 
 footer {
-  padding: 1rem 2rem;
-  bottom: 0;
-  background-color: var(--gunmetal);
+  background-color: #333;
+  overflow: hidden;
   width: 100%;
   margin: 0;
   padding: 0;
-  border-top: solid 1pt var(--blue-crayola);
 }
 
 footer > p {
   font-family: monospace;
   font-size: 1.5em;
   margin: 0;
-  padding: 1rem 2rem;
+  padding: 2em;
 }
 
 /* Style the links inside the navigation bar */
@@ -120,3 +117,4 @@ form {
   cursor: pointer;
   margin-top: 1rem;
 }
+
