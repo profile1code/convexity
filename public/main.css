@@ -1,37 +1,37 @@
 /* Colorscheme */
 :root {
-/* CSS HEX */
---blue-crayola: #5d7ae9ff;
---turquoise: #19e5d9ff;
---gunmetal: #213141ff;
---snow: #fffafbff;
---lavender-blush: #fceff9ff;
+  /* CSS HEX */
+  --blue-crayola: #5d7ae9ff;
+  --turquoise: #19e5d9ff;
+  --gunmetal: #213141ff;
+  --snow: #fffafbff;
+  --lavender-blush: #fceff9ff;
 }
 
 /*------------------------------GENERAL CSS---------------------------------------------*/
-body, html {
-    margin: 0; /* Remove any default margin */
-    padding: 0; /* Remove any default padding */
-    font-family: Arial, sans-serif;
-    height: 100%;
-    zoom: 125%;
-    background-color: var(--gunmetal);
+body,
+html {
+  margin: 0; /* Remove any default margin */
+  padding: 0; /* Remove any default padding */
+  font-family: Arial, sans-serif;
+  height: 100%;
+  zoom: 125%;
+  background-color: var(--gunmetal);
 }
 
 p {
-    margin: 40px;
-    color: var(--snow);
+  margin: 40px;
+  color: var(--snow);
 }
 
 .topnav {
-    background-color: var(--gunmetal);
-    overflow: hidden;
-    width: 100%; /* Ensure the topnav spans the full width of the screen */
-    margin: 0; /* Remove any margin that could cause extra space */
-    padding: 0; /* Ensure no padding causes extra space */
-    border-bottom: solid 1pt var(--blue-crayola);
+  background-color: var(--gunmetal);
+  overflow: hidden;
+  width: 100%; /* Ensure the topnav spans the full width of the screen */
+  margin: 0; /* Remove any margin that could cause extra space */
+  padding: 0; /* Ensure no padding causes extra space */
+  border-bottom: solid 1pt var(--blue-crayola);
 }
-
 
 footer {
   background-color: var(--gunmetal);
@@ -51,71 +51,69 @@ footer > p {
 
 /* Style the links inside the navigation bar */
 .topnav a {
-    float: left;
-    color: var(--snow);
-    padding: 14px 2rem;
-    text-decoration: none;
-    font-size: 17px;
+  float: left;
+  color: var(--snow);
+  padding: 14px 2rem;
+  text-decoration: none;
+  font-size: 17px;
 }
 
 #login {
-    float: right;
-    background-color: var(--gunmetal);
+  float: right;
+  background-color: var(--gunmetal);
 }
 
 /* Change the color of links on hover */
 .topnav a:hover {
-    color: var(--turquoise);
+  color: var(--turquoise);
 }
-
 
 /*-----------------------LOGIN PAGE CSS----------------------------------*/
 .login-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 .login-form {
-    background: var(--snow);
-    padding: 2rem;
-    width: 100%;
-    max-width: 250px;
-    text-align: center;
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.8); /* Subtle shadow */
-
+  background: var(--snow);
+  padding: 2rem;
+  width: 100%;
+  max-width: 250px;
+  text-align: center;
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.8); /* Subtle shadow */
 }
 #signinbox {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
 .logo {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    font-family: "Lucida Console", "Courier New", monospace;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  font-family: "Lucida Console", "Courier New", monospace;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .up {
-    border: 2.5px solid var(--gunmetal);
-    border-radius: 4px;
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
+  border: 2.5px solid var(--gunmetal);
+  border-radius: 4px;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
 
 .submitbutton {
-    background: #050031; /* Dark button color */
-    color: #e0cfff;
-    border: none;
-    padding: 0.2rem;
-    border-radius: 2px;
-    font-size: 0.75rem;
-    cursor: pointer;
-    margin-top: 1rem;
+  background: #050031; /* Dark button color */
+  color: #e0cfff;
+  border: none;
+  padding: 0.2rem;
+  border-radius: 2px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  margin-top: 1rem;
 }
