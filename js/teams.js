@@ -42,7 +42,6 @@ router.post('/create/team', function(req, res) {
 
 router.get('/fetch/user-teams', (req, res) => {
     // Assuming you're using session for user data
-    console.log("fetching teams");
     const userID = req.session.user.userId;
     if (!userID) {
         return res.status(401).send('User not logged in');
@@ -53,7 +52,6 @@ router.get('/fetch/user-teams', (req, res) => {
             console.log(err);
             return res.status(500).send('Error retrieving events');
         }
-        console.log(results);
         res.json(results);
     });
     
@@ -75,7 +73,6 @@ router.get('/fetch/all-teams', (req, res) => {
             console.log(err);
             return res.status(500).send('Error retrieving events');
         }
-        console.log(results);
         res.json(results);
     });
     
