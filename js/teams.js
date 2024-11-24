@@ -45,7 +45,7 @@ router.get('/fetch/user-teams', (req, res) => {
         return res.status(401).send('User not logged in');
     }
 
-    db.query('SELECT * FROM UserTeams NATURAL JOIN Teams INNER JOIN Users ON Teams.TeamLeaderID=Users.UserID WHERE UserTeams.UserID = ?', [userID], (err, results) => {
+    db.query('SELECT TeamName, Username, TeamID, Description FROM UserTeams NATURAL JOIN Teams INNER JOIN Users ON Teams.TeamLeaderID=Users.UserID WHERE UserTeams.UserID = ?', [userID], (err, results) => {
         if (err) {
             console.log(err);
             return res.status(500).send('Error retrieving events');
