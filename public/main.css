@@ -27,14 +27,13 @@ p {
 }
 
 .topnav {
-    background-color: var(--gunmetal);
-    overflow: hidden;
-    width: 100%; /* Ensure the topnav spans the full width of the screen */
-    margin: 0; /* Remove any margin that could cause extra space */
-    padding: 0; /* Ensure no padding causes extra space */
-    border-bottom: solid 1pt var(--blue-crayola);
+  background-color: var(--gunmetal);
+  overflow: hidden;
+  width: 100%; /* Ensure the topnav spans the full width of the screen */
+  margin: 0; /* Remove any margin that could cause extra space */
+  padding: 0; /* Ensure no padding causes extra space */
+  border-bottom: solid 1pt var(--blue-crayola);
 }
-
 
 footer {
   background-color: var(--gunmetal);
