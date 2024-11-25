@@ -1,12 +1,6 @@
 // loads up the top bar and footer for each page without needing to modify it for all pages
 document.addEventListener("DOMContentLoaded", function() {
     // Create the top navigation bar
-{/* <form action="/logout" method="POST">
-                <button id="login" type="submit">Logout</button>
-            </form> 
-            
-    <a href="index.html" id="login" onclick="logoutUser();">Logout</a>
-*/}
 
     const loginTopNav = `
         <div class="topnav">
