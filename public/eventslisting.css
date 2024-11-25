@@ -48,7 +48,6 @@
   color: var(--snow);
   text-wrap: wrap;
   /* max-height: 100rem; */
-
 }
 
 .time-and-team {
@@ -65,8 +64,22 @@
   align-self: center;
   position: absolute;
   padding: 5rem;
+  flex-direction: row;
   &::backdrop {
     backdrop-filter: blur(1pt);
+  }
+
+  & > form {
+    display: flex;
+    flex-direction: column;
+
+    & > input {
+      padding: 0.5rem;
+      font-size: 1.25rem;
+    }
+
+    & legend {
+    }
   }
 }
 
