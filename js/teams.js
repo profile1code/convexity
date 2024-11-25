@@ -5,6 +5,8 @@ const router = express.Router();
 const db = require('./db-connector');
 const path = require('path');
 
+
+
 router.post('/create/team', function(req, res) {
     const { teamName, description } = req.body;
     const userID = req.session.user.userId;  // Assuming the user ID is stored in the session
@@ -75,5 +77,25 @@ router.get('/fetch/team/:teamID', function(req, res) {
         res.json(results);
     });
 });
+
+// Loading up all teams
+router.get('/fetch/all-teams', (req, res) => {
+    const query = req.query.query || '';
+    const userID = req.session.user.userId;
+    if (!userID) {
+        return res.status(401).send('User not logged in');
+    }
+
+    const dbQuery = `SELECT TeamName, Username, TeamID, Description FROM UserTeams NATURAL JOIN Teams INNER JOIN Users ON Teams.TeamLeaderID=Users.UserID WHERE (TeamName LIKE ? OR Username LIKE ? OR Description LIKE ?) LIMIT 20`;
+
+    db.query(dbQuery, [`%${query}%`, `%${query}%`, `%${query}%`], (err, results) => {
+        if (err) {
+            console.log(err);
+            return res.status(500).send('Error retrieving teams');
+        }
+        res.json(results);
+    });
+});
+
 
 module.exports = router;
