@@ -92,3 +92,12 @@
   border-radius: 100%;
   border-style: solid;
 }
+
+#add-button:hover {
+  scale: 1.10;
+  cursor: pointer;
+}
+
+.fa-plus:before {
+  content: "\f067";
+}
