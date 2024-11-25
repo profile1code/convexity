@@ -29,16 +29,6 @@ function renderTeams() {
                             },
                             body: JSON.stringify({ teamID: team.TeamID }),
                         })
-                            .then(response => response.json())
-                            .then(data => {
-                                if (!data.success) {
-                                    alert(`Failed to join team: ${data.message}`);
-                                } 
-                            })
-                            .catch(error => {
-                                console.error('Error:', error);
-                                alert('An error occurred while sending the join request.');
-                            });
                     });
                     teamElement.appendChild(joinButton);
                     teamContainer.appendChild(teamElement);

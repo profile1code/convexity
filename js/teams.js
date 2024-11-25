@@ -97,5 +97,28 @@ router.get('/fetch/all-teams', (req, res) => {
     });
 });
 
+router.post('/join-team', function(req, res) {
+    const {teamID} = req.body;
+    const userID = req.session.user.userId;  // Assuming the user ID is stored in the session
+    const checkTeamQuery = "SELECT * FROM UserTeams WHERE TeamID = ? AND UserID = ?";
+    db.query(checkTeamQuery, [teamID, userID], function(err, results) {
+        if (err) {
+            return res.status(500).send("Database error");
+        }
+
+        if (results.length > 0) {
+            return res.status(400).send("Already joined!");
+        }
+
+        // If not in Team, join Team.
+        const addTeamQuery = "INSERT INTO UserTeams (TeamID, UserID) VALUES (?, ?)";
+        db.query(addTeamQuery, [teamID, userID], function(err, result) {
+            if (err) {
+                return res.status(500).send("Error creating team");
+            }
+            res.redirect('/user-teams.html');
+        });
+    });
+});
 
 module.exports = router;
