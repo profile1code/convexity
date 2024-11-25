@@ -141,4 +141,43 @@ router.post("/event", (req, res) => {
 
 })
 
+// EVENTS
+
+// GET USER EVENTS
+router.get('/fetch/user-events', (req, res) => {
+    const userID = req.session.user.userId;
+    if (!userID) {
+        return res.status(401).send('User not logged in');
+    }
+
+    const dbQuery = `SELECT 
+                        Events.EventID, 
+                        Events.EventName, 
+                        Teams.TeamID, 
+                        Teams.TeamName, 
+                        Timeslots.TimeslotID, 
+                        Timeslots.StartTime, 
+                        Timeslots.EndTime
+                    FROM 
+                        UserTeams
+                    INNER JOIN Teams ON UserTeams.TeamID = Teams.TeamID
+                    INNER JOIN TeamEvents ON Teams.TeamID = TeamEvents.TeamID
+                    INNER JOIN Events ON TeamEvents.EventID = Events.EventID
+                    INNER JOIN EventTimeslots ON Events.EventID = EventTimeslots.EventID
+                    INNER JOIN Timeslots ON EventTimeslots.TimeslotID = Timeslots.TimeslotID
+                    WHERE 
+                        UserTeams.UserID = ?
+                    ORDER BY 
+                        Timeslots.StartTime;`;
+
+    db.query(dbQuery, [userID], (err, results) => {
+        if (err) {
+            console.log(err);
+            return res.status(500).send('Error retrieving teams');
+        }
+        res.json(results);
+    });
+});
+
+
 module.exports = router;
