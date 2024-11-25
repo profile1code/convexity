@@ -37,7 +37,7 @@ function renderTeams() {
         })
         .catch(err => {
             console.error('Error fetching teams:', err);
-            document.getElementById('user-teams-list').innerHTML = '<p>Failed to load teams.</p>';
+            document.getElementById('all-teams-list').innerHTML = '<p>Failed to load teams.</p>';
         });
 }
 

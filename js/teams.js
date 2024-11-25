@@ -3,6 +3,9 @@
 const express = require('express');
 const router = express.Router();
 const db = require('./db-connector');
+const path = require('path');
+
+
 
 router.post('/create/team', function(req, res) {
     const { teamName, description } = req.body;
@@ -57,25 +60,41 @@ router.get('/fetch/user-teams', (req, res) => {
     
 });
 
-// Loading up all teams (might need future mods)
+// Loading up the team page
+router.get('/team/:teamID', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/secure', 'team.html'));
+});
+
+// Loading up the team page
+router.get('/fetch/team/:teamID', function(req, res) {
+    const teamID = req.params.teamID;
+
+    db.query('SELECT TeamName, Username, TeamID, Description FROM UserTeams NATURAL JOIN Teams INNER JOIN Users ON Teams.TeamLeaderID=Users.UserID WHERE UserTeams.TeamID = ?', [teamID], (err, results) => {
+        if (err) {
+            console.log(err);
+            return res.status(500).send('Error retrieving team');
+        }
+        res.json(results);
+    });
+});
+
+// Loading up all teams
 router.get('/fetch/all-teams', (req, res) => {
-    // Assuming you're using session for user data
     const query = req.query.query || '';
     const userID = req.session.user.userId;
     if (!userID) {
         return res.status(401).send('User not logged in');
     }
-    dbQuery = `SELECT TeamName, Username, TeamID, Description FROM UserTeams NATURAL JOIN Teams INNER JOIN Users ON Teams.TeamLeaderID=Users.UserID 
-    WHERE (TeamName LIKE ? OR Username LIKE ? OR Description LIKE ?) LIMIT 20`;
+
+    const dbQuery = `SELECT DISTINCT TeamName, Username, TeamID, Description FROM UserTeams NATURAL JOIN Teams INNER JOIN Users ON Teams.TeamLeaderID=Users.UserID WHERE (TeamName LIKE ? OR Username LIKE ? OR Description LIKE ?) LIMIT 20`;
 
     db.query(dbQuery, [`%${query}%`, `%${query}%`, `%${query}%`], (err, results) => {
         if (err) {
             console.log(err);
-            return res.status(500).send('Error retrieving events');
+            return res.status(500).send('Error retrieving teams');
         }
         res.json(results);
     });
-    
 });
 
 router.post('/join-team', function(req, res) {
@@ -101,6 +120,5 @@ router.post('/join-team', function(req, res) {
         });
     });
 });
-
 
 module.exports = router;

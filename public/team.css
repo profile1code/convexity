@@ -1,0 +1,7 @@
+.captain {
+  margin-left: 2rem;
+  font-size: 1.25rem;
+}
+#team-info {
+  flex-grow: 1;
+}

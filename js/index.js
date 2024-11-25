@@ -8,6 +8,7 @@ const fs = require('fs');
 folderPath = '../public/secure'
 filePaths = fs.readdirSync(folderPath).map(file => `/${file}`);
 
+
 app.use(express.urlencoded({ extended: true })); // Parses URL-encoded form data
 app.use(express.json()); // Parses JSON bodies
 

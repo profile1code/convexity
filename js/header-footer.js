@@ -1,18 +1,10 @@
 // loads up the top bar and footer for each page without needing to modify it for all pages
 document.addEventListener("DOMContentLoaded", function() {
     // Create the top navigation bar
-{/* <form action="/logout" method="POST">
-                <button id="login" type="submit">Logout</button>
-            </form> 
-            
-    <a href="index.html" id="login" onclick="logoutUser();">Logout</a>
-*/}
 
     const loginTopNav = `
         <div class="topnav">
             <a class="active" href="index.html" id="home">Home</a>
-            <a class="active" href="/user-teams.html" id="user-teams">My Teams</a>
-            <a class="active" href="eventslisting.html" id="events-listing">Events</a>
             <a href="signin.html" id="login">Login</a>
         </div>
     `;
@@ -26,6 +18,8 @@ document.addEventListener("DOMContentLoaded", function() {
         <div class="topnav">
             <a class="active" href="index.html" id="home">Home</a>
             <a class="active" href="/user-teams.html" id="user-teams">My Teams</a>
+            <a class="active" href="eventslisting.html" id="events-listing">Events</a>
+
             <a href="" id="login" onclick="logoutUser();">Logout</a>
         </div>
     `;
