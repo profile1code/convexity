@@ -11,12 +11,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 teamElement.classList.add('team');
 
                 // Add team name and ID
-                const teamName = document.createElement('h2');
+                const teamName = document.createElement('h1');
                 teamName.textContent = `${team.TeamName}'s Home`;
                 teamElement.appendChild(teamName);
 
                 // Add team leader (captain)
-                const teamcaptain = document.createElement('h3');
+                const teamcaptain = document.createElement('h2');
                 teamcaptain.textContent = `Team Leader: ${team.Username}`;
                 teamcaptain.classList.add("captain");
                 teamElement.appendChild(teamcaptain);
