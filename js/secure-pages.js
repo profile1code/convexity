@@ -21,6 +21,9 @@ function isLoggedIn(req, res, next) {
         if (matchingFile) {
             res.redirect('./signin.html');
         }
+        else if (req.url.startsWith('/team/')) {
+            res.redirect('/signin.html');
+        }
         else {
             next();
         }
