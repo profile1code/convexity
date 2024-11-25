@@ -53,6 +53,12 @@ app.post('/logout', (req, res) => {
     });
 });
 
+app.get('/fetch/teams', (req, res) => {
+  const userId = req.session.user.userId;
+  const result = db.query("SELECT TeamName FROM Teams WHERE Teams.TeamLeaderID=?", [userId]);
+  res.json(result);
+})
+
 // Start the server
 app.listen(PORT, () => {
     console.log('Express started on http://localhost:' + PORT + '; press Ctrl-C to terminate.');

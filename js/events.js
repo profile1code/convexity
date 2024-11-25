@@ -10,3 +10,14 @@ cancelbutton.addEventListener('click', () => {
 dialogButton.addEventListener('click', () => {
   dialog.showModal();
 });
+
+const team_select = document.getElementById("team-select");
+fetch("/fetch/teams").then(
+  data => data.json()
+).then(teams => {
+  for (const team of teams) {
+      const val = team_select.appendChild(document.createElement('option'));
+      val.value = team.TeamName;
+      val.textContent = team.TeamName;
+  }
+});

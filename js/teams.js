@@ -97,6 +97,14 @@ router.get('/fetch/all-teams', (req, res) => {
     });
 });
 
+router.get('/fetch/teams', (req, res) => {
+  const userId = req.session.user.userId;
+  db.query("SELECT TeamName FROM Teams WHERE Teams.TeamLeaderID=?", [userId], (err, result) => {
+    console.log(result);
+    res.json(result);
+  });
+})
+
 router.post('/join-team', function(req, res) {
     const {teamID} = req.body;
     const userID = req.session.user.userId;  // Assuming the user ID is stored in the session
