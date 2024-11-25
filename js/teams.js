@@ -132,9 +132,17 @@ router.post('/join-team', function(req, res) {
 router.post("/event", (req, res) => {
     db.query("INSERT INTO Events(EventName) VALUES (?)", req.body["title"], (err, result) => {
       
-      db.query("INSERT INTO TeamEvents(TeamID, EventID) VALUES (?,?)", [req.body["team"], result.insertId]);
-      db.query("INSERT INTO Timeslots(StartTime, EndTime) VALUES (?, ?)", [req.body["start-time"], req.body["end-time"]]);
+      const eventID = result.insertId;
+      db.query("INSERT INTO TeamEvents(TeamID, EventID) VALUES (?,?)", [req.body["team"], eventID]);
+      db.query("INSERT INTO Timeslots(StartTime, EndTime) VALUES (?, ?)", [req.body["start-time"], req.body["end-time"]], (err, result) => {
+
+        db.query("INSERT INTO EventTimeslots(EventID, TimeslotID) VALUES (?, ?)", [eventID, result.insertId], (err, result) => {
+
+        res.redirect("/eventslisting.html");
+      });
     });
+    });
+    
     
     // req.body["start-time"],
     // req.body["end-time"]
