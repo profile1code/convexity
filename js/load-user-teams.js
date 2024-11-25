@@ -8,18 +8,33 @@ document.addEventListener("DOMContentLoaded", () => {
                 teamContainer.appendChild(document.createElement("p")).textContent = "Not currently in a team.";
             } else {
                 teams.forEach(team => {
-                    const teamElement = document.createElement('div');
-                    teamElement.classList.add('team');
-                    teamElement.appendChild(document.createElement('h3')).textContent = `${team.TeamID} ${team.TeamName}`;
-                    const teamcaptain = teamElement.appendChild(document.createElement('p'));
-                    teamcaptain.textContent = `Team Leader: ${team.Username}`;
-                    teamcaptain.classList.add("captain");
-                    teamContainer.appendChild(teamElement);
-                    const description = teamElement.appendChild(document.createElement('p'));
-                    description.textContent = team.Description ? team.Description: "No description available";
-                    description.classList.add("description");
-                    teamContainer.appendChild(teamElement);
-                    
+                // Create a link for the entire team element
+                const teamLink = document.createElement('a');
+                teamLink.href = `/team/${team.TeamID}`;  // Set the link to the team page URL
+                teamLink.classList.add('team-link');  // Optional: You can add a class to style the link
+
+                // Create the team container (this is now inside the link)
+                const teamElement = document.createElement('div');
+                teamElement.classList.add('team');
+
+                // Add team name and ID
+                const teamName = document.createElement('h3');
+                teamName.textContent = `${team.TeamID} ${team.TeamName}`;
+                teamElement.appendChild(teamName);
+
+                // Add team leader (captain)
+                const teamcaptain = document.createElement('p');
+                teamcaptain.textContent = `Team Leader: ${team.Username}`;
+                teamcaptain.classList.add("captain");
+                teamElement.appendChild(teamcaptain);
+
+                // Add team description
+                const description = document.createElement('p');
+                description.textContent = team.Description ? team.Description : "No description available";
+                description.classList.add("description");
+                teamElement.appendChild(description);
+                teamLink.appendChild(teamElement);
+                teamContainer.appendChild(teamLink);
                 });
             }
         })

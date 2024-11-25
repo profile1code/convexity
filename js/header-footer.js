@@ -1,8 +1,6 @@
 // loads up the top bar and footer for each page without needing to modify it for all pages
 document.addEventListener("DOMContentLoaded", function() {
     // Create the top navigation bar
-
-
     const topNav = `
         <div class="topnav">
             <a class="active" href="index.html" id="home">Home</a>
