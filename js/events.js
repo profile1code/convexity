@@ -17,7 +17,7 @@ fetch("/fetch/teams").then(
 ).then(teams => {
   for (const team of teams) {
       const val = team_select.appendChild(document.createElement('option'));
-      val.value = team.TeamName;
+      val.value = team.TeamID;
       val.textContent = team.TeamName;
   }
 });

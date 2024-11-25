@@ -12,6 +12,8 @@ filePaths = fs.readdirSync(folderPath).map(file => `/${file}`);
 app.use(express.urlencoded({ extended: true })); // Parses URL-encoded form data
 app.use(express.json()); // Parses JSON bodies
 
+app.use(require("body-parser").urlencoded({extended: true}));
+
 app.use(session({
     secret: 'thisisatestkey', // Use a strong secret key
     resave: false,
@@ -53,11 +55,6 @@ app.post('/logout', (req, res) => {
     });
 });
 
-app.get('/fetch/teams', (req, res) => {
-  const userId = req.session.user.userId;
-  const result = db.query("SELECT TeamName FROM Teams WHERE Teams.TeamLeaderID=?", [userId]);
-  res.json(result);
-})
 
 // Start the server
 app.listen(PORT, () => {

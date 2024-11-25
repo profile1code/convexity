@@ -99,7 +99,7 @@ router.get('/fetch/all-teams', (req, res) => {
 
 router.get('/fetch/teams', (req, res) => {
   const userId = req.session.user.userId;
-  db.query("SELECT TeamName FROM Teams WHERE Teams.TeamLeaderID=?", [userId], (err, result) => {
+  db.query("SELECT TeamName, TeamID FROM Teams WHERE Teams.TeamLeaderID=?", [userId], (err, result) => {
     console.log(result);
     res.json(result);
   });
@@ -128,5 +128,17 @@ router.post('/join-team', function(req, res) {
         });
     });
 });
+
+router.post("/event", (req, res) => {
+    db.query("INSERT INTO Events(EventName) VALUES (?)", req.body["title"], (err, result) => {
+      
+      db.query("INSERT INTO TeamEvents(TeamID, EventID) VALUES (?,?)", [req.body["team"], result.insertId]);
+      db.query("INSERT INTO Timeslots(StartTime, EndTime) VALUES (?, ?)", [req.body["start-time"], req.body["end-time"]]);
+    });
+    
+    // req.body["start-time"],
+    // req.body["end-time"]
+
+})
 
 module.exports = router;

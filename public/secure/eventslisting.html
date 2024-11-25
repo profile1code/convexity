@@ -12,14 +12,14 @@
 
   <body>
     <dialog id="add-event-dialog">
-      <form>
+      <form method="POST" action="/event">
         <legend>Add Event</legend>
         <label for="start-time">Start Time</label>
-        <input type="datetime-local" id="start-time" required>
+        <input name="start-time" type="datetime-local" id="start-time" required>
         <label for="end-time">End Time</label>
-        <input type="datetime-local" id="end-time" required>
+        <input name="end-time" type="datetime-local" id="end-time" required>
         <label for="event-title">Event Title</label>
-        <input type="text" id="event-title" required>
+        <input name="title" type="text" id="event-title" required>
         <select name="team" id="team-select" required>
         </select>
         <button type="submit" id="event-submit">Add Event</button>
