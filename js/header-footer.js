@@ -11,8 +11,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const loginTopNav = `
         <div class="topnav">
             <a class="active" href="index.html" id="home">Home</a>
-            <a class="active" href="/user-teams.html" id="user-teams">My Teams</a>
-            <a class="active" href="eventslisting.html" id="events-listing">Events</a>
             <a href="signin.html" id="login">Login</a>
         </div>
     `;
@@ -26,6 +24,8 @@ document.addEventListener("DOMContentLoaded", function() {
         <div class="topnav">
             <a class="active" href="index.html" id="home">Home</a>
             <a class="active" href="/user-teams.html" id="user-teams">My Teams</a>
+            <a class="active" href="eventslisting.html" id="events-listing">Events</a>
+
             <a href="" id="login" onclick="logoutUser();">Logout</a>
         </div>
     `;
