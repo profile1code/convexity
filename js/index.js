@@ -4,7 +4,6 @@ const app = express();
 const path = require('path');
 const PORT = 80;
 const fs = require('fs');
-const router = express.Router();
 
 folderPath = '../public/secure'
 filePaths = fs.readdirSync(folderPath).map(file => `/${file}`);
