@@ -86,7 +86,7 @@ router.get('/fetch/all-teams', (req, res) => {
         return res.status(401).send('User not logged in');
     }
 
-    const dbQuery = `SELECT TeamName, Username, TeamID, Description FROM UserTeams NATURAL JOIN Teams INNER JOIN Users ON Teams.TeamLeaderID=Users.UserID WHERE (TeamName LIKE ? OR Username LIKE ? OR Description LIKE ?) LIMIT 20`;
+    const dbQuery = `SELECT DISTINCT TeamName, Username, TeamID, Description FROM UserTeams NATURAL JOIN Teams INNER JOIN Users ON Teams.TeamLeaderID=Users.UserID WHERE (TeamName LIKE ? OR Username LIKE ? OR Description LIKE ?) LIMIT 20`;
 
     db.query(dbQuery, [`%${query}%`, `%${query}%`, `%${query}%`], (err, results) => {
         if (err) {
